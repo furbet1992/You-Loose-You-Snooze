@@ -23,14 +23,13 @@ public class CubeCorrection : MonoBehaviour
 
     void Start()
     {
-        randomCube = cubeList[Random.Range(0, 12)];
+        randomCube = cubeList[Random.Range(0, 14)];
         Debug.Log(randomCube.name);
     }
 
     // Update is called once per frame
     void Update()
     {
-
         if (Input.GetMouseButtonDown(0))
         {
             ray = cam.ScreenPointToRay(Input.mousePosition);
@@ -38,15 +37,17 @@ public class CubeCorrection : MonoBehaviour
             {
                 if (hit.collider.gameObject == randomCube)
                 {
-                    Debug.Log("correct");
+                    Debug.Log("BADLUCK");
                     hit.collider.gameObject.GetComponent<Renderer>().material.color = Color.red;
+                    Vibration(); 
                     //animation 
-                    loseText.text = "You Drink";
+                    loseText.text = "Cuc'ed ";
                     StartCoroutine(Loser());
                 }
                 else
                 {
-                    Destroy(hit.collider.gameObject);
+                    hit.collider.gameObject.GetComponent<Renderer>().material.color = Color.green;
+                    //Destroy(hit.collider.gameObject);
                 }
             }
         }
@@ -57,6 +58,14 @@ public class CubeCorrection : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        
+    }
+
+
+    void Vibration()
+    {
+        Handheld.Vibrate();
+        Debug.Log("Vibrate"); 
     }
 }
  

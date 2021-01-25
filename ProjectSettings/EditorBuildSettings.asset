@@ -4,5 +4,20 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 28552baa1df2828409e697d6eea2a2a7
+  - enabled: 1
+    path: Assets/Scenes/Wheel of Fortune.unity
+    guid: 8769a12a52ec7c345b780ae35d82a437
+  - enabled: 1
+    path: Assets/Scenes/Egg.unity
+    guid: 849b7ead604bdd9428c404bd38fd90e9
+  - enabled: 1
+    path: Assets/Scenes/cards.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Rhyme.unity
+    guid: 5f463f84da6755e4fb088499f93aac2f
   m_configObjects: {}
