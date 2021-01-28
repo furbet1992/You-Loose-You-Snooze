@@ -7,10 +7,13 @@ public class Rhyme : MonoBehaviour
 {
     //List of words
      public List<string> words = new List<string>();
+     public List<AudioSource> audioVoice = new List<AudioSource>(); 
      public Text wordText; 
    
     void Start()
     {
+        //RHYME
+
         //Catergory: Animal
         words.Add("Cat");
         words.Add("Dog");
