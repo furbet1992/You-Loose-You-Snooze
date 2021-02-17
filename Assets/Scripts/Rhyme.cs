@@ -8,7 +8,11 @@ public class Rhyme : MonoBehaviour
     //List of words
      public List<string> words = new List<string>();
      public List<AudioSource> audioVoice = new List<AudioSource>(); 
-     public Text wordText; 
+     public Text wordText;
+
+    //List of Missions
+    public List<string> missions = new List<string>();
+    public Text missionText; 
    
     void Start()
     {
@@ -82,16 +86,49 @@ public class Rhyme : MonoBehaviour
         words.Add("Weenie");
         words.Add("Doodle");
 
+        misisonCount(); 
+    }
 
+    void misisonCount()
+    {
+        missions.Add("Clap and increase by 1 clap after each person");
+        missions.Add("Wink right and left");
+        missions.Add("Add ‘Fuck’ at the end of each answer");
+        missions.Add("Add ‘Penis’ at the end of each answer");
+        missions.Add("Add ‘Penis’ at the end of each answer");
+        missions.Add("Add ‘Smelly’ at the end of each answer");
+        missions.Add("Add ‘Laa’ at the end of each answer");
+        missions.Add("Add ‘fart’ at the end of each answer");
+        missions.Add("Loser Drinks 2");
+        missions.Add("Wild Card");
+        //missions.Add("");
+        //missions.Add("");
+        //missions.Add("");
+        //missions.Add("");
+        //missions.Add("");
+        //missions.Add("");
+        //missions.Add("");
+        //missions.Add("");
+        //missions.Add("");
+        //missions.Add("");
+        //missions.Add("");
+        //missions.Add("");
     }
 
     public void ChooseWord()
     {
+        //Rhyme Word
       int randomIndex= Random.Range (0,words.Count);
       string randomWord = words[randomIndex];
       words.Remove(randomWord);   
 
         wordText.text = randomWord;
+
+        //Side Mission
+
+        int randomMissionIndex = Random.Range(0, missions.Count);
+        string randomMissionWord = missions[randomMissionIndex];
+        missionText.text = randomMissionWord; 
     }
 }
     
