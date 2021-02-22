@@ -25,9 +25,9 @@ public class Category : MonoBehaviour
         category.Add("Reptile");
         category.Add("Dessert");
         category.Add("Shoe Brand");
-        category.Add("Game Title");
+        category.Add("Video Game Title");
         category.Add("Fruit");
-        category.Add("Garden Tool");
+        category.Add("Tools");
         category.Add("Furniture");
         category.Add("Music Instruments");
         category.Add("Colors");

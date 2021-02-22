@@ -10,6 +10,8 @@ public class Rhyme : MonoBehaviour
      public List<AudioSource> audioVoice = new List<AudioSource>(); 
      public Text wordText;
 
+    public LeanTweenAnimation leantween;  
+
     //List of Missions
     public List<string> missions = new List<string>();
     public Text missionText; 
@@ -128,7 +130,11 @@ public class Rhyme : MonoBehaviour
 
         int randomMissionIndex = Random.Range(0, missions.Count);
         string randomMissionWord = missions[randomMissionIndex];
-        missionText.text = randomMissionWord; 
+        missionText.text = randomMissionWord;
+
+        //activate Tween script
+        leantween.GetComponent<LeanTweenAnimation>().RhymeWordTween(); 
+
     }
 }
     

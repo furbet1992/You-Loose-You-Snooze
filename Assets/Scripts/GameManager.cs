@@ -41,5 +41,10 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(4);
     }
 
+    public void Play()
+    {
+        SceneManager.LoadScene(1);
+    }
+
 
 }
