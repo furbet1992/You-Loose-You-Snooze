@@ -8,6 +8,7 @@ public class LeanTweenAnimation : MonoBehaviour
     // public GameObject rhymeWord;
 
     Vector3 originalPos;
+    public GameObject infor; 
 
     void Start()
     {
@@ -33,11 +34,19 @@ public class LeanTweenAnimation : MonoBehaviour
 
     public void TweenUIBox()
     {
-        LeanTween.scale(gameObject, new Vector3(0, 0, 0), 0.5f).setOnComplete(DestroyMe);
+        LeanTween.scale(gameObject, new Vector3(0, 0, 0), 0.5f);//.setOnComplete(DestroyMe);
+        LeanTween.move(gameObject, infor.transform.position, 0.5f); 
     }
 
     public void DestroyMe()
     {
         Destroy(gameObject); 
     }
+
+    public void TweenOut()
+    {
+        LeanTween.scale(gameObject, new Vector3(1, 1, 1), 1f);
+        LeanTween.move(gameObject,originalPos, 0.5f);
+    }
+
 }

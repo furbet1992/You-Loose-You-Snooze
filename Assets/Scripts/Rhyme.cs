@@ -120,6 +120,7 @@ public class Rhyme : MonoBehaviour
     public void ChooseWord()
     {
         //Rhyme Word
+
       int randomIndex= Random.Range (0,words.Count);
       string randomWord = words[randomIndex];
       words.Remove(randomWord);   
@@ -131,10 +132,6 @@ public class Rhyme : MonoBehaviour
         int randomMissionIndex = Random.Range(0, missions.Count);
         string randomMissionWord = missions[randomMissionIndex];
         missionText.text = randomMissionWord;
-
-        //activate Tween script
-        leantween.GetComponent<LeanTweenAnimation>().RhymeWordTween(); 
-
     }
 }
     
