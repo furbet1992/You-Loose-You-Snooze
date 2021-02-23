@@ -10,7 +10,12 @@ public class MiniGameSelect : MonoBehaviour
     PointerEventData pointerEventData;
     EventSystem      eventSystem;
 
-    GameManager gameManager; 
+    GameManager gameManager;
+
+    public Rhyme rhymeWords;
+    public LeanTweenAnimation leanTA;
+
+    public AudioSource boing; 
 
 
     void Start()
@@ -23,7 +28,7 @@ public class MiniGameSelect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetMouseButtonDown(0))
         {
             pointerEventData = new PointerEventData(eventSystem);
             pointerEventData.position = Input.mousePosition;
@@ -34,26 +39,35 @@ public class MiniGameSelect : MonoBehaviour
 
             foreach (RaycastResult result in results)
             {
+                if(result.gameObject.name == "Rhyme")
+                {
+                    //Debug.Log("detect"); 
+                    rhymeWords.GetComponent<Rhyme>().ChooseWord();
+                    leanTA.GetComponent<LeanTweenAnimation>().RhymeWordTween();
+                    boing.Play(); 
+                }
+
+
                //WheelFortune
-                if(result.gameObject.name == "WheelFortune")
-                {                    
-                    gameManager.WheelFortune(); 
-                }
-                //Egg
-                if (result.gameObject.name == "Egg")
-                {
-                    gameManager.Egg();
-                }
-                //Card
-                if (result.gameObject.name == "Card")
-                {
-                    gameManager.Card();
-                }
-                //Rhythm
-                if (result.gameObject.name == "Rhythm")
-                {
-                    gameManager.Rhythm();
-                }
+                //if(result.gameObject.name == "WheelFortune")
+                //{                    
+                //    gameManager.WheelFortune(); 
+                //}
+                ////Egg
+                //if (result.gameObject.name == "Egg")
+                //{
+                //    gameManager.Egg();
+                //}
+                ////Card
+                //if (result.gameObject.name == "Card")
+                //{
+                //    gameManager.Card();
+                //}
+                ////Rhythm
+                //if (result.gameObject.name == "Rhythm")
+                //{
+                //    gameManager.Rhythm();
+                //}
 
             }
         }

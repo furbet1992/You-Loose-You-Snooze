@@ -10,18 +10,19 @@ public class LeanTweenAnimation : MonoBehaviour
     Vector3 originalPos;
     public GameObject infor; 
 
+    // 
+
+
+
+
+
+
+
+
     void Start()
     {
         originalPos = this.gameObject.transform.position; 
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
     public void RhymeWordTween()
     {
         //LeanTween.scale(gameObject, new Vector3(0, 0, 0), 2f).setEase(LeanTweenType.easeOutElastic); 
