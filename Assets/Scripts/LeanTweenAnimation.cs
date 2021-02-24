@@ -10,13 +10,8 @@ public class LeanTweenAnimation : MonoBehaviour
     Vector3 originalPos;
     public GameObject infor; 
 
-    // 
-
-
-
-
-
-
+    //sideMission
+    public GameObject sideMiss; 
 
 
     void Start()
@@ -50,4 +45,8 @@ public class LeanTweenAnimation : MonoBehaviour
         LeanTween.move(gameObject,originalPos, 0.5f);
     }
 
+    public void TweenSide()
+    {
+        LeanTween.moveLocalX(sideMiss, 1f, 1f).setEase(LeanTweenType.easeInBounce);
+    }
 }

@@ -39,7 +39,7 @@ public class MiniGameSelect : MonoBehaviour
 
             foreach (RaycastResult result in results)
             {
-                if(result.gameObject.name == "Rhyme")
+                if(result.gameObject.name == "MAIN WORD")
                 {
                     //Debug.Log("detect"); 
                     rhymeWords.GetComponent<Rhyme>().ChooseWord();
